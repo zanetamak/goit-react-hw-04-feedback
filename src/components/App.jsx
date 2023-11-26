@@ -16,7 +16,7 @@ export const App = () => {
     return good + neutral + bad;
   };
 
-  countPositiveFeedbackPercentage = () => {
+   const countPositiveFeedbackPercentage = () => {
     const { good } = stats;
     return Math.round((good / countTotalFeedback()) * 100);
     // pozytywne odpowiedzi dzielone na wszystkie x 100, zeby wyszedl procent
