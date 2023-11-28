@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 
 import Statistics from './Statistics/Statistics'
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
@@ -22,10 +22,13 @@ export const App = () => {
     // pozytywne odpowiedzi dzielone na wszystkie x 100, zeby wyszedl procent
   }
 
-const handleLeaveFeedback = (option) => {
-  setStats((prevStats) => ({
+const handleLeaveFeedback = (name) => {
+  setStats((prevStats) => ({ // funkcja aktualizująca stan, a argumentem tej funkcji jest callback, 
+    // która otrzymuje poprzedni stan prevState.
     ...prevStats,
-    [option]: prevStats[option] + 1,
+    //  Wewnątrz tworzony jest nowy obiekt stanu, rozprzestrzeniając poprzedni stan (...prevState) i zwiększając 
+    // wartość klucza([name]) o 1.
+    [name]: prevStats[name] + 1,
   }));
 };
 
